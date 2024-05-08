@@ -15,14 +15,12 @@ const g_number  = document.getElementById("tel")
 const email = document.getElementById("email")
 const fileInput = document.getElementById("fileid")
 
-
 url_prime = "http://127.0.0.1:5501"
-// url_prime = "https://fae2-86-50-71-71.ngrok-free.app"
 
 //  post API 
 async function my_data(){
 
-    url_whole = `${url_prime}/consent`
+    url_whole = `${url_prime}/forum_post`
 
     const formData  = new FormData()
     formData.append("first_name", f_name.value);
@@ -35,16 +33,18 @@ async function my_data(){
     formData.append("mobile_number", g_number.value);
     formData.append("email", email.value)
     formData.append("file" , fileInput.files[0]);
-    console.log(formData)
+
     try {
     const res = await fetch(url_whole , {
         method: "POST",
-        mode: "cors",
+        mode: "no-cors",
         body: formData
     })
-    const r_url = res.url
-    console.log(r_url)
+
+    const r_url = await res.text()
+    console.log(`Received URL is ${r_url}`)
     window.location.assign(r_url)
+
     } catch (error){
     console.log(error)
     }
@@ -59,6 +59,7 @@ function check_validity(e){
     const score = validity() 
     if (score == 9 ){
         my_data()
+        console.log(`Score:`)
     } else {
         e.preventDefault()
     }
