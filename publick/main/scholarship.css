@@ -1,0 +1,125 @@
+.block1{
+    background-image:  url("images/site_related/head\ image.png");
+    background-size: contain;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.block1-p1{
+    font-size: x-large;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(0, 11, 20);
+    text-shadow: rgb(221, 129, 17);
+    background-color: beige;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 10px;
+}
+.block1-s1 {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+    position: relative;
+}
+.block2 {
+    border-color: black;
+    background-color: antiquewhite;
+    margin-top: 1%;
+    margin-bottom: 5%;
+    padding-top: 10px;
+    border-style: dashed;
+    width: 99%;
+}
+.block2-h1 {
+    text-decoration: underline;
+    text-decoration-color: red;
+    color: red;
+    text-align: center;
+    font-family: 'Courier New';
+}
+.block2-p1 {
+    text-align: center;
+}
+.block3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+.country1 {
+    display: grid;
+    grid-template-rows: 1fr 50px 1fr;
+    background-color: aqua;
+}
+.country1-flag ,.country2-flag,.country3-flag,.country4-flag,.country5-flag,.country6-flag
+{
+    background-image: url("images/Country_flags/finland.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 10px;
+}
+.country2 {
+    display: grid;
+    grid-template-rows: 1fr 50px 1fr;
+    background-color: aqua;
+}
+.country2-flag{
+    background-image: url("images/Country_flags/norway.gif");
+}
+.country3 {
+    display: grid;
+    grid-template-rows: 1fr 50px 1fr;
+    background-color: aqua;
+}
+.country3-flag{
+    background-image: url("images/Country_flags/latvia.gif");
+}
+.country4 {
+    display: grid;
+    grid-template-rows: 1fr 50px 1fr;
+    background-color: aqua;
+}
+.country4-flag{
+    background-image: url("images/Country_flags/sweden.gif");
+}
+.country5 {
+    display: grid;
+    grid-template-rows: 1fr 50px 1fr;
+    background-color: aqua;
+}
+.country5-flag{
+    background-image: url("images/Country_flags/germany.gif");
+}
+.country6 {
+    display: grid;
+    grid-template-rows: 1fr 50px 1fr;
+    background-color: aqua;
+}
+.country6-flag{
+    background-image: url("images/Country_flags/switzerland.gif");
+}
+.country1-name,.country2-name,.country3-name,.country4-name,.country5-name,.country6-name {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.register-div{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+}
+
+.r_button{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    align-content: center;
+    padding: 10px;
+    font-family: fantasy;
+    font-weight: 800;
+    border-radius: 5px;
+}
